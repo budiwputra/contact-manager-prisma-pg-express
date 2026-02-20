@@ -25,7 +25,7 @@ const sendVerificationEmail = async (to, token) => {
   }
 
   try {
-    await client.sendTransacEmail(emailData)
+    await client.transactionalEmails.sendTransacEmail(emailData)
     return true
   } catch (error) {
     console.error("Brevo error:", error.response?.body || error)
